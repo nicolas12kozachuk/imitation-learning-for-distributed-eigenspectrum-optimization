@@ -1,9 +1,54 @@
-# ECE 440: Introduction to Online and Reinforcement Learning
+# Imitation Learning for Distributed Eigenspectrum Optimization
 
-## Project 2: Inverse Reinforcemnt Learning for Eigenspectrum Optimiziation
+This project explores the use of **Imitation Learning** to optimize the eigenspectrum of graph networks for mitigating resonance risk caused by adversarial attacks. The approach employs preference comparison algorithms to simulate eigenspectrum optimization in a decentralized setting, using Proximal Policy Optimization (PPO) to learn a policy for edge weight manipulation.
 
-#### By Nicolas Kozachuk
+## Project Description
 
+Graph eigenspectrum optimization is critical in dynamic networks for reducing resonance risks that external agents may exploit. This project addresses the challenges of implementing optimization in decentralized systems where full network information is unavailable. The method involves:
+- Using imitation learning with preference-based queries to approximate centralized eigenspectrum optimization.
+- Implementing a custom environment and defining Markov Decision Processes for learning.
+- Utilizing **Proximal Policy Optimization (PPO)** for robust policy learning.
+
+The trained model achieves significant optimization while reducing computational costs compared to traditional gradient descent methods.
+
+## Code Details
+
+The implementation, provided in a Jupyter Notebook, includes:
+1. **Environment Setup**:
+   - Defines the observation and action spaces based on graph properties.
+   - Enforces constraints such as constant edge weight sums.
+2. **Algorithm Implementation**:
+   - Utilizes PPO with custom reward and preference comparison mechanisms.
+   - Parameters include trajectory sampling and hyperparameter tuning.
+3. **Training and Evaluation**:
+   - Optimizes the eigenspectrum and evaluates the model’s performance against benchmarks.
+
+## Results
+
+- **Initial Objective Value**: **213.23**
+- **Optimized Objective Value (Imitation Learning)**: **76.01**
+- **Optimized Objective Value (Centralized Gradient Descent)**: **71.04**
+- **Percent Difference**: The imitation learning approach achieves an optimized value within **6.99%** of the centralized gradient descent method, while significantly reducing computational time from 2 hours to just 5 minutes.
+
+## Key Features
+
+- **Customizable Environment**: Defines the constraints and properties of graph-based systems.
+- **Preference-Based Learning**: Uses imitation learning to reduce resonance risk in decentralized settings.
+- **Efficiency**: The method significantly decreases computational time compared to traditional approaches.
+
+## Future Work
+
+- Extend the model to accommodate multi-agent systems for fully decentralized solutions.
+- Build custom wrappers to evaluate performance across various graph configurations.
+- Explore alternative libraries for enhanced flexibility in imitation learning.
+
+## References
+
+Key references include seminal works on imitation learning, preference-based optimization, and PPO algorithms. A complete reference list is provided in the accompanying report.
+
+---
+
+For a detailed explanation, refer to the full report and codebase.
 
 
 ### How to run code
